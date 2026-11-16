@@ -30,8 +30,9 @@ Structure and copy sourced from [kaib-invest.com](https://kaib-invest.com/): KAI
 | 8 | How We Work | Dark 4-step grid |
 | 9 | Market Insight | 3 editorial cards with disclaimer |
 | 10 | Focus / CTA | Sector · market · counterparty lists + contact CTA box |
-| 11 | Contact | Dark section: address info + enquiry form |
-| 12 | Footer | Logo, nav, legal, risk warning, links |
+| 11 | Team | 3-card grid: KJ Group, IB Team, Venture/Tech Team; partners blurb |
+| 12 | Contact | Dark section: address info + enquiry form |
+| 13 | Footer | Logo, nav, legal, risk warning, links |
 
 ---
 
@@ -49,11 +50,19 @@ Structure and copy sourced from [kaib-invest.com](https://kaib-invest.com/): KAI
 
 ```
 opshk-/
-├── index.html   — full single-page site
+├── index.html   — full single-page site (13 sections)
 ├── style.css    — all styles
 └── REPORT.md   — this file
 ```
 
+## Commit History
+
+| Commit | Description |
+|--------|-------------|
+| `3869182` | Initial remake — 12 sections, full HTML/CSS |
+| `10b0077` | Update — Team section, hero tags, scroll indicator, nav refinements, OG meta |
+
 ---
 
-*Remake completed: 2026-11-16*
+*Remake completed: 2026-11-16*  
+*Last updated: 2026-11-16*
