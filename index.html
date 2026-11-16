@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KAIB — Advanced Investment Bank</title>
+  <meta name="description" content="KAIB — KJ Advanced Investment Bank. A next-generation investment bank licensed in Labuan, Malaysia, offering private investment management, liquidity, financing, and venture capital.">
+  <meta property="og:title" content="KAIB — Advanced Investment Bank">
+  <meta property="og:description" content="We raise capital, structure transactions, and invest our own balance sheet — bridging traditional finance with the digital frontier.">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -21,7 +26,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#track">Track Record</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#platform">Platform</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#insight">Insight</a></li>
         <li><a href="#contact" class="nav-cta">Get in touch</a></li>
       </ul>
       <button class="nav-burger" aria-label="Toggle menu">
@@ -46,7 +52,17 @@
           <a href="#services" class="btn btn-primary">Our services</a>
           <a href="#contact" class="btn btn-outline">Request institutional access</a>
         </div>
+        <div class="hero-tags">
+          <span>Private Investment</span>
+          <span>Liquidity &amp; Brokerage</span>
+          <span>Venture Capital</span>
+          <span>Financing</span>
+        </div>
       </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><rect x="6.5" y="0.5" width="3" height="6" rx="1.5" fill="currentColor" opacity="0.5"/><path d="M8 14l-3-3m3 3l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
     </div>
   </section>
 
@@ -424,6 +440,67 @@
     </div>
   </section>
 
+  <!-- TEAM -->
+  <section id="team">
+    <div class="section-inner">
+      <div class="label">Team</div>
+      <h2 class="section-title">The principals behind KAIB.</h2>
+      <p class="section-lead">We are operators and investors who have led transactions, founded companies, and managed capital across multiple market cycles.</p>
+
+      <div class="team-grid">
+
+        <div class="team-card">
+          <div class="team-avatar">KJ</div>
+          <div class="team-info">
+            <div class="team-name">KJ Group Principals</div>
+            <div class="team-role">Founding Group</div>
+            <p>KAIB was established by the KJ Group — a multi-sector investment group with operating businesses across Southeast Asia. The Group's principals bring deep expertise in financial services, real estate, and digital infrastructure.</p>
+            <div class="team-markets">
+              <span>Malaysia</span>
+              <span>Singapore</span>
+              <span>GCC</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">IB</div>
+          <div class="team-info">
+            <div class="team-name">Investment Banking Team</div>
+            <div class="team-role">Capital Markets &amp; Advisory</div>
+            <p>Our deal team has collectively structured over $2B in transactions across equity raises, debt facilities, and M&amp;A mandates — with execution experience in Labuan, Hong Kong, Dubai, and London.</p>
+            <div class="team-markets">
+              <span>Labuan</span>
+              <span>Hong Kong</span>
+              <span>Dubai</span>
+              <span>London</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">VC</div>
+          <div class="team-info">
+            <div class="team-name">Venture &amp; Technology Team</div>
+            <div class="team-role">Fintech &amp; Digital Assets</div>
+            <p>KAIB's venture and technology principals have founded and invested in fintech, blockchain, and payments infrastructure businesses across ASEAN and North Asia — with exits via public listings and strategic acquisitions.</p>
+            <div class="team-markets">
+              <span>Fintech</span>
+              <span>Blockchain</span>
+              <span>ASEAN</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="team-partners">
+        <div class="label" style="margin-bottom:16px">Partners &amp; Network</div>
+        <p>KAIB operates within a global ecosystem of co-investors, advisers, and operating partners across Asia, the Middle East, Europe, and North America — enabling us to co-invest alongside sovereign funds, family offices, and specialist PE firms on cross-border mandates.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner contact-grid">
@@ -540,7 +617,7 @@
     }
 
     // Scroll-reveal
-    const reveals = document.querySelectorAll('.stat, .service-card, .work-item, .platform-item, .how-item, .insight-card, .about-item');
+    const reveals = document.querySelectorAll('.stat, .service-card, .work-item, .platform-item, .how-item, .insight-card, .about-item, .team-card');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

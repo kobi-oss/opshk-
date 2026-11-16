@@ -138,7 +138,8 @@ img { max-width: 100%; display: block; }
   min-height: 100vh;
   display: flex;
   align-items: flex-end;
-  padding: 140px 32px 80px;
+  padding: 140px 32px 100px;
+  position: relative;
 }
 
 .hero-inner {
@@ -178,6 +179,46 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-tags span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
 }
 
 /* ===========================
@@ -732,6 +773,108 @@ section { padding: 100px 32px; }
 }
 
 /* ===========================
+   TEAM
+   =========================== */
+#team {
+  background: var(--bg-alt);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+
+.team-card {
+  background: var(--bg);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: background 0.15s;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s, transform 0.5s, background 0.15s;
+}
+.team-card.visible { opacity: 1; transform: none; }
+.team-card:hover { background: var(--white); }
+
+.team-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.team-name {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+}
+
+.team-role {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.team-card p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.team-markets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.team-markets span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+}
+
+.team-partners {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 36px 40px;
+  margin-top: 2px;
+}
+
+.team-partners p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  max-width: 760px;
+}
+
+/* ===========================
    CONTACT
    =========================== */
 #contact {
@@ -935,16 +1078,18 @@ footer {
   .focus-grid { grid-template-columns: 1fr; }
   .focus-cta { max-width: 400px; }
   .platform-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  #hero { padding: 120px 20px 60px; }
+  #hero { padding: 120px 20px 80px; }
   .hero-inner {
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
   }
   .hero-right { max-width: 100%; }
+  .hero-scroll { display: none; }
 
   section { padding: 72px 20px; }
 
@@ -957,6 +1102,7 @@ footer {
     padding: 24px;
     gap: 16px;
     border-bottom: 1px solid var(--border);
+    z-index: 99;
   }
   .nav-links.open { display: flex; }
   .nav-burger { display: flex; }
@@ -973,4 +1119,6 @@ footer {
   .footer-top { flex-direction: column; gap: 24px; }
   .footer-bottom { flex-direction: column; gap: 16px; }
   #nav { padding: 0 20px; }
+  .team-grid { grid-template-columns: 1fr; }
+  .team-partners { padding: 24px 20px; }
 }
